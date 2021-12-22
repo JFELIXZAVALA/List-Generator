@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>The Shopping List</title>
+  </head>
+  <body>
+    <section>
+      <div id="head-text">The List</div>
+      <div class="caption">"Let's begin your best list yet."</div>
+      <div class="list">
+        <p id="first"><span id="clock"></span></p>
+        <hr />
+
+        <input id="userinput" type="text" placeholder="enter items" />
+        <button id="enter">Enter</button>
+        <p class="caption2">(Click on a list item to mark as done.)</p>
+        <ul></ul>
+      </div>
+      <script type="text/javascript">
+        var clockElement = document.getElementById("clock");
+
+        function clock() {
+          var date = new Date();
+
+          // Replace '400px' below with where you want the format to change.
+          if (window.matchMedia("(max-width: 400px)").matches) {
+            // Use this format for windows with a width up to the value above.
+            clockElement.textContent = date.toLocaleString();
+          } else {
+            // While this format will be used for larger windows.
+            clockElement.textContent = date.toString();
+          }
+        }
+
+        setInterval(clock, 1000);
+      </script>
+      <script type="text/javascript" src="script.js"></script>
+    </section>
+  </body>
+</html>
